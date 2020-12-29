@@ -14,9 +14,7 @@
 #include <llvm/Demangle/Demangle.h>
 
 bool is_itanium_encoding(const char *mangled_name) {
-    auto ptr = std::strstr(mangled_name, "_");
-    size_t pos = 0;
-    if(ptr != nullptr) pos = ptr - mangled_name;
+    size_t pos = std::string(mangled_name).find_first_not_of('_');
     return pos > 0 && pos <= 4 && mangled_name[pos] == 'Z';
 }
 
