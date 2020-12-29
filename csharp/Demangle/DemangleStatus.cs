@@ -7,5 +7,5 @@
         InvalidMangledName = -2,
         MemoryAllocFailure = -1,
         Success = 0
-    }
+    };
 }
